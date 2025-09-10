@@ -10,7 +10,7 @@
     </parent>
     <groupId>io.bootify</groupId>
     <artifactId>bootify-premium-contact-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>bootify-premium-contact-service</name>
 
     <properties>
