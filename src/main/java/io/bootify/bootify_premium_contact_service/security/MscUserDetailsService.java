@@ -27,7 +27,7 @@ public class MscUserDetailsService implements UserDetailsService {
             log.warn("user not found: {}", username);
             throw new UsernameNotFoundException("User " + username + " not found");
         }
-        final String role = UserRoles.ROLE_UNKNOWN;
+        final String role = UserRoles.ROLE_ADMIN;
         final List<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(role));
         return new MscUserDetails(user.getId(), username, user.getPassword(), authorities);
     }

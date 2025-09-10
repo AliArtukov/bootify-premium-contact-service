@@ -1,11 +1,13 @@
 package io.bootify.bootify_premium_contact_service.contact;
 
+import io.bootify.bootify_premium_contact_service.security.UserRoles;
 import io.bootify.bootify_premium_contact_service.util.WebUtils;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.SortDefault;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/contacts")
+@PreAuthorize("hasAuthority('" + UserRoles.ROLE_ADMIN + "')")
 public class ContactController {
 
     private final ContactService contactService;
